@@ -1,6 +1,6 @@
 var score = 0;
 var timeEl = document.querySelector("#time");
-var countdown = 30;
+var countdown = 3;
 var questions = [{
     title: "What is the name of the conductor of a marching band?",
     choices: ["Maestro", "Drum Major", "Conductor", "Instructor"],
@@ -23,6 +23,7 @@ var questionEl = document.querySelector("#questions");
 var beginElement = document.querySelector(".begin");
 var timerInterval;
 var scoreEl = document.querySelector("#score")
+var choiceResult = document.querySelector(".result")
 
 function beginQuiz(event) {
     console.log("HELP");
@@ -38,8 +39,9 @@ function clockTick() {
         timeEl.textContent = countdown;
         if (countdown <= 0) {
             clearInterval(timerInterval);
-        }
-
+            quizOver();
+            scoreboard()
+        };
     }
 
 function startQuestions() {
@@ -87,6 +89,7 @@ function questionClick() {
 
 function quizOver() {
     console.log("The Quiz Sure Is Over")
+    questionEl.setAttribute("class", "hide")
 }
 
 function scoreboard() {
