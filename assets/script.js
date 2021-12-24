@@ -1,6 +1,6 @@
 var score = 0;
 var timeEl = document.querySelector("#time");
-var countdown = 3;
+var countdown = 15;
 var questions = [{
     title: "What is the name of the conductor of a marching band?",
     choices: ["Maestro", "Drum Major", "Conductor", "Instructor"],
